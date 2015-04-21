@@ -739,7 +739,7 @@ li.fa_separator {
             else {
               var prev = getId('crePreview');
               prev.innerHTML = '<div class="center"><i class="fa fa-spinner fa-spin fa-5x"></i><p>Prévisualisation en cours...</p></div>';
-              template = '[color=#3399CC][b]Creation Type :[/b][/color] ' + form.creType.value + '\n[color=#333333][b]Dimensions :[/b][/color] ' + form.creSize.value + '\n[color=#3399CC][b]Primary Colors :[/b][/color] ' + form.primaryColors.value + '\n[color=#333333][b]Secondary Colors :[/b][/color] ' + form.secondaryColors.value + '\n[color=#3399CC][b]Images to include :[/b][/color] [spoiler="Images"]' + form.creImages.value.replace(/\s/g,'\n') + '[/spoiler]\n[color=#333333][b]Text to insert :[/b][/color] ' + form.creText.value + '\n[color=#3399CC][b]Font :[/b][/color] ' + form.creFont.value + '\n[color=#333333][b]Font Color :[/b][/color] ' + form.creFontColor.value + '\n[color=#3399CC][b]Link to my Forumotion forum :[/b][/color] ' + form.creURL.value + '\n[color=#333333][b]Username on the forum :[/b][/color] ' + form.crePseudo.value + '\n[color=#3399CC][b]Link to last graphic request :[/b][/color] ' + form.creLast.value + '\n[color=#333333][b]Detail description :[/b][/color] ' + form.desc.value;
+	      template = '[color=#3399CC][b]Creation Type :[/b][/color] ' + form.creType.value + '\n[color=#333333][b]Dimensions :[/b][/color] ' + form.creSize.value + '\n[color=#3399CC][b]Primary Colors :[/b][/color] ' + form.primaryColors.value + '\n[color=#333333][b]Secondary Colors :[/b][/color] ' + form.secondaryColors.value + '\n[color=#3399CC][b]Images to include :[/b][/color] [spoiler="Images"]' + form.creImages.value.replace(/\s/g,'\n') + '[/spoiler]\n[color=#333333][b]Text to insert :[/b][/color] ' + form.creText.value + '\n[color=#3399CC][b]Font :[/b][/color] ' + form.creFont.value + '\n[color=#333333][b]Font Color :[/b][/color] ' + form.creFontColor.value + '\n[color=#3399CC][b]Link to my Forumotion forum :[/b][/color] ' + form.creURL.value + '\n[color=#333333][b]Username on the forum :[/b][/color] ' + form.crePseudo.value + '\n[color=#3399CC][b]Link to last graphic request :[/b][/color] ' + form.creLast.value + '\n[color=#333333][b]Detail description :[/b][/color] ' + form.desc.value;
               form.message.value = template;
               $.post('/privmsg', {
                 subject : form.subject.value,
@@ -1009,8 +1009,26 @@ li.fa_separator {
           <div class="dataform offset">
             <fieldset>
               <h2><i class="fa fa-comment"></i> Prévisualisez votre demande</h2>
+	 	<div class="group">
+                <label for="creSubject">Subject of your request <span class="mandatory">*</span> (<span id="charTitle">0</span>)</label>
+                <input class="inputbox" id="creSubject" name="subject" type="text" placeholder="Short description of your request" />
+                <div class="fa_help">?<p class="help-text">This will be the title of your request once posted. Make sure it's explicit to what you're requesting. For example ; "A banner for my forum." The length of the title should be at least 5 characters.</p></div>
+              </div>
+
+              <div class="group">
+                <label for="text_editor_textarea">Describe your request in detail <span class="mandatory">*</span> (<span id="charMsg">0</span>)</label>
+                <textarea id="text_editor_textarea" name="desc" placeholder="Give a detailed description of what you're requesting"></textarea>
+                <div class="fa_help">?<p class="help-text">This is where you can describe to designers what you're expecting. Make sure to provide as much details as possible. The length of your description should be at least 150 characters.</p></div>
+              </div>
               
-              Blabla
+              <div class="group">
+                <label><input type="checkbox" name="creRules"/> I have read and understand the rules for requesting graphics</label>
+                <p class="help-text"><a href="/t135232-graphic-request-rules" target="_blank">Rules for requesting graphics</a></p>
+              </div>
+              
+              <textarea style="display:none" name="message"></textarea>
+              <input type="hidden" name="mode" value="newtopic" />
+              <input type="hidden" name="f" value="31" /> 
             </fieldset>
             <div style="clear:both;"></div>
           </div>
@@ -1046,7 +1064,29 @@ li.fa_separator {
     
     <!-- FOOTER -->
     <div id="footer">
-      <div class="content"></div>
+      <div class="content">
+      
+	    <!-- DROPDOWNS AND OVERLAYS -->
+	    <div id="imageManager" class="dropdown hidden">
+	      <div id="im_fields">
+		<div class="dd-row">
+		  <input type="text"/><a href="#" title="Add another image" class="button-sm invert" onclick="_form.addImage();return false;">+</a>
+		</div>
+	      </div>
+	      <div style="text-align:right;"><input type="button" class="button back" style="background-image:none" value="Cancel" onclick="getId('imageManager').className += ' hidden';"/><input id="imagesUpdate" type="button" class="button finish" style="background-image:none"  value="Confirm"/></div>
+	    </div>
+	    
+	    <div id="colorPicker" class="hidden"><input type="text" id="spectrumPicker"/></div>
+	    <div id="boxSizing" class="hidden">
+	      <div class="optionbar">
+		<input id="boxDimensions" class="inputbox" type="text" />
+		<input id="boxSave" class="button finish" style="background-image:none" type="button" value="Confirm"/>
+		<input id="boxReset" class="button next" style="background-image:none" type="button" value="Reset"/>
+		<input class="button back" style="background-image:none" type="button" value="Cancel" onclick="getId('boxSizing').className += ' hidden';"/>
+	      </div>
+	      <div id="box"></div> 
+      
+      </div>
     </div>
     
     <!-- JAVASCRIPT TO EXECUTE WHEN THE DOCUMENT IS READY -->
