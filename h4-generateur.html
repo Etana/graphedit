@@ -731,15 +731,15 @@ li.fa_separator {
               }
             }
             if (!pass) return alert('Merci de remplir tous les champs obligatoires');
+            var content = '[color=#3399CC][b]Creation Type :[/b][/color] ' + form.creType.value + '\n[color=#333333][b]Dimensions :[/b][/color] ' + form.creSize.value + '\n[color=#3399CC][b]Primary Colors :[/b][/color] ' + form.primaryColors.value + '\n[color=#3399CC][b]Images to include :[/b][/color] [spoiler="Images"]' + form.creImages.value.replace(/\s/g,'\n') + '[/spoiler]\n[color=#333333][b]Text to insert :[/b][/color] ' + form.creText.value + '\n[color=#3399CC][b]Font :[/b][/color] ' + form.creFont.value + '\n[color=#333333][b]Font Color :[/b][/color] ' + form.creFontColor.value + '\n[color=#3399CC][b]Link to my Forumotion forum :[/b][/color] ' + form.creURL.value + '\n[color=#333333][b]Detail description :[/b][/color] ' + form.desc.value;
+            form.content.value = content;
             break;
-            
-            
           case 2 :
             if (error.length) return alert(error);
             else {
               var prev = getId('crePreview');
               prev.innerHTML = '<div class="center"><i class="fa fa-spinner fa-spin fa-5x"></i><p>Prévisualisation en cours...</p></div>';
-              template = '[color=#3399CC][b]Creation Type :[/b][/color] ' + form.creType.value + '\n[color=#333333][b]Dimensions :[/b][/color] ' + form.creSize.value + '\n[color=#3399CC][b]Primary Colors :[/b][/color] ' + form.primaryColors.value + '\n[color=#3399CC][b]Images to include :[/b][/color] [spoiler="Images"]' + form.creImages.value.replace(/\s/g,'\n') + '[/spoiler]\n[color=#333333][b]Text to insert :[/b][/color] ' + form.creText.value + '\n[color=#3399CC][b]Font :[/b][/color] ' + form.creFont.value + '\n[color=#333333][b]Font Color :[/b][/color] ' + form.creFontColor.value + '\n[color=#3399CC][b]Link to my Forumotion forum :[/b][/color] ' + form.creURL.value + '\n[color=#333333][b]Detail description :[/b][/color] ' + form.desc.value;
+              template = form.content.value;
               form.message.value = template;
               $.post('/privmsg', {
                 subject : form.subject.value,
@@ -986,6 +986,12 @@ li.fa_separator {
                   <input class="inputbox" id="creURL" name="creURL" type="text" placeholder="L'adresse de votre forum" />
                 <div class="fa_help">?<p class="help-text">Merci de fournir l'adresse de votre forum Forumactif, sans quoi nous ne pourrions réaliser votre commande.</p></div>
               </div>
+
+              <div class="group">
+                <label for="text_editor_textarea">Describe your request in detail <span class="mandatory">*</span> (<span id="charMsg">0</span>)</label>
+                <textarea id="text_editor_textarea" name="desc" placeholder="Give a detailed description of what you're requesting"></textarea>
+                <div class="fa_help">?<p class="help-text">This is where you can describe to designers what you're expecting. Make sure to provide as much details as possible. The length of your description should be at least 150 characters.</p></div>
+              </div>
               
               <div class="group">
                 <label><input type="checkbox" name="creRules"/> J'ai lu et compris les règles de la section graphique</label>
@@ -1016,9 +1022,9 @@ li.fa_separator {
               </div>
 
               <div class="group">
-                <label for="text_editor_textarea">Describe your request in detail <span class="mandatory">*</span> (<span id="charMsg">0</span>)</label>
-                <textarea id="text_editor_textarea" name="desc" placeholder="Give a detailed description of what you're requesting"></textarea>
-                <div class="fa_help">?<p class="help-text">This is where you can describe to designers what you're expecting. Make sure to provide as much details as possible. The length of your description should be at least 150 characters.</p></div>
+                <label for="text_editor_textarea">Contenu du message <span class="mandatory">*</span> (<span id="charMsg">0</span>)</label>
+                <textarea id="text_editor_textarea" name="content" placeholder="Give a detailed description of what you're requesting"></textarea>
+                <div class="fa_help">?<p class="help-text">C'est le contenu du message qui sera envoyé.</p></div>
               </div>
               
               <div class="group">
