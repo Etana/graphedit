@@ -806,7 +806,7 @@ li.fa_separator {
           showInput : 1,
           flat : 1,
           color : (input.value.length ? input.value : '#000000'),
-          chooseText : 'Confirm',
+          chooseText : 'Confirmer',
           move : function(c) { input.value = c.toString().toUpperCase() }
         });
         $('.sp-cancel, .sp-choose',picker).click(function() {
@@ -818,7 +818,7 @@ li.fa_separator {
       addImage : function() {
         var row = document.createElement('DIV');
         row.className = 'dd-row';
-        row.innerHTML = '<input type="text"/><a href="#" title="Add another image" class="button-sm invert" onclick="_form.addImage();return false;">+</a><a href="#" title="Remove image" class="button-sm invert" style="font-size:18px;line-height:17px;" onclick="_form.removeImage(this);return false;">-</a>';
+        row.innerHTML = '<input type="text"/><a href="#" title="Ajouter une autre image" class="button-sm invert" onclick="_form.addImage();return false;">+</a><a href="#" title="Supprimer une image" class="button-sm invert" style="font-size:18px;line-height:17px;" onclick="_form.removeImage(this);return false;">-</a>';
         getId('im_fields').appendChild(row);
       },
       removeImage : function(el) { getId('im_fields').removeChild(el.parentNode) }
@@ -935,7 +935,7 @@ li.fa_separator {
                 </div>
               
                 <div class="right box">
-                  <input class="inputbox hidden" name="creType" type="text" placeholder="Please specify" />
+                  <input class="inputbox hidden" name="creType" type="text" placeholder="Merci de spécifier" />
                 </div>
                 <div class="fa_help">?<p class="help-text">Choisissez la nature de la création désirée. Si la nature n'est pas reprise dans les options, choisissez "Autre" et expliquez ce que vous désirez.</p></div>
               </div>
@@ -950,7 +950,7 @@ li.fa_separator {
 
                   <label for="primaryColors">Couleur de fond</label>
                   <input class="inputbox" id="primaryColors" name="primaryColors" type="text" placeholder="#FFFFFF" onclick="_form.selectColor(this);" />
-                <div class="fa_help">?<p class="help-text">blabla</p></div>
+                <div class="fa_help">?<p class="help-text">Si vous désirez une couleur de fond spéficique, merci de la préciser.</p></div>
               </div>
             
               <div class="group">
@@ -964,7 +964,7 @@ li.fa_separator {
                   <label for="creText">Texte à insérer <span class="mandatory">*</span></label>
                   <input class="inputbox" id="creText" name="creText" type="text" placeholder="Texte à insérer sur la crétion" />
                 </div>
-                <div class="fa_help">?<p class="help-text">If you want certain images or text to be included in your request, then you should specify it within these two fields. Providing this information helps the designer know what to include in your request.</p></div>
+                <div class="fa_help">?<p class="help-text">Merci de préciser les images désirées ainsi que le texte à insérer sur la création.</p></div>
               </div>
               
               <div class="group">
@@ -978,18 +978,18 @@ li.fa_separator {
                   <label for="creFontColor">Couleur de la police</label>
                   <input class="inputbox" id="creFontColor" name="creFontColor" type="text" placeholder="Couleur de la police" onclick="_form.selectColor(this);" />
                 </div>
-                <div class="fa_help">?<p class="help-text">If you want a specific font used, provide an URL or name of the font. If you also want the font to be a specific color, you can note it here too.</p></div>
+                <div class="fa_help">?<p class="help-text">Si vous désirez une police et une couleur spécifique, merci de les préciser.</p></div>
               </div>
               
               <div class="group">
                   <label for="creURL">Lien de votre forum Forumactif <span class="mandatory">*</span></label>
                   <input class="inputbox" id="creURL" name="creURL" type="text" placeholder="L'adresse de votre forum" />
-                <div class="fa_help">?<p class="help-text">Providing the URL and name on the forum is essential so designers can make graphics that fit your forum, but also so we know you're with the Forumotion family.</p></div>
+                <div class="fa_help">?<p class="help-text">Merci de fournir l'adresse de votre forum Forumactif, sans quoi nous ne pourrions réaliser votre commande.</p></div>
               </div>
               
               <div class="group">
                 <label><input type="checkbox" name="creRules"/> J'ai lu et compris les règles de la section graphique</label>
-                <p class="help-text"><a href="/t135232-graphic-request-rules" target="_blank">Rules for requesting graphics</a></p>
+                <p class="help-text"><a href="http://forum.forumactif.com/t287501-regles-de-la-section-graphique-comment-faire-une-demande" target="_blank">Règles de la section graphique</a></p>
               </div>
               
             </fieldset>
@@ -1070,19 +1070,19 @@ li.fa_separator {
 	    <div id="imageManager" class="dropdown hidden">
 	      <div id="im_fields">
 		<div class="dd-row">
-		  <input type="text"/><a href="#" title="Add another image" class="button-sm invert" onclick="_form.addImage();return false;">+</a>
+		  <input type="text"/><a href="#" title="Ajouter une autre image" class="button-sm invert" onclick="_form.addImage();return false;">+</a>
 		</div>
 	      </div>
-	      <div style="text-align:right;"><input type="button" class="button back" style="background-image:none" value="Cancel" onclick="getId('imageManager').className += ' hidden';"/><input id="imagesUpdate" type="button" class="button finish" style="background-image:none"  value="Confirm"/></div>
+	      <div style="text-align:right;"><input type="button" class="button back" style="background-image:none" value="Effacer" onclick="getId('imageManager').className += ' hidden';"/><input id="imagesUpdate" type="button" class="button finish" style="background-image:none"  value="Confirmer"/></div>
 	    </div>
 	    
 	    <div id="colorPicker" class="hidden"><input type="text" id="spectrumPicker"/></div>
 	    <div id="boxSizing" class="hidden">
 	      <div class="optionbar">
 		<input id="boxDimensions" class="inputbox" type="text" />
-		<input id="boxSave" class="button finish" style="background-image:none" type="button" value="Confirm"/>
-		<input id="boxReset" class="button next" style="background-image:none" type="button" value="Reset"/>
-		<input class="button back" style="background-image:none" type="button" value="Cancel" onclick="getId('boxSizing').className += ' hidden';"/>
+		<input id="boxSave" class="button finish" style="background-image:none" type="button" value="Confirmer"/>
+		<input id="boxReset" class="button next" style="background-image:none" type="button" value="Effacer"/>
+		<input class="button back" style="background-image:none" type="button" value="Annuler" onclick="getId('boxSizing').className += ' hidden';"/>
 	      </div>
 	      <div id="box"></div> 
       
