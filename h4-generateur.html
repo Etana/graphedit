@@ -731,7 +731,7 @@ li.fa_separator {
               }
             }
             if (!pass) return alert('Merci de remplir tous les champs obligatoires');
-            var content = '[color=#3399CC][b]Creation Type :[/b][/color] ' + form.creType.value + '\n[color=#333333][b]Dimensions :[/b][/color] ' + form.creSize.value + '\n[color=#3399CC][b]Primary Colors :[/b][/color] ' + form.primaryColors.value + '\n[color=#3399CC][b]Images to include :[/b][/color] [spoiler="Images"]' + form.creImages.value.replace(/\s/g,'\n') + '[/spoiler]\n[color=#333333][b]Text to insert :[/b][/color] ' + form.creText.value + '\n[color=#3399CC][b]Font :[/b][/color] ' + form.creFont.value + '\n[color=#333333][b]Font Color :[/b][/color] ' + form.creFontColor.value + '\n[color=#3399CC][b]Link to my Forumotion forum :[/b][/color] ' + form.creURL.value + '\n[color=#333333][b]Detail description :[/b][/color] ' + form.desc.value;
+            var content = '[color=#3399CC][b]Nature de la création :[/b][/color] ' + form.creType.value + '\n[color=#333333][b]Taille de la création (en pixels) :[/b][/color] ' + form.creSize.value + '\n[color=#3399CC][b]Couleur de fond :[/b][/color] ' + form.primaryColors.value + '\n[color=#3399CC][b]Lien(s) image(s) :[/b][/color] [spoiler="Images"]' + form.creImages.value.replace(/\s/g,'\n') + '[/spoiler]\n[color=#333333][b]Texte à insérer :[/b][/color] ' + form.creText.value + '\n[color=#3399CC][b]Police à utiliser :[/b][/color] ' + form.creFont.value + '\n[color=#333333][b]Couleur police :[/b][/color] ' + form.creFontColor.value + '\n[color=#3399CC][b]Lien de mon forum Forumactif :[/b][/color] ' + form.creURL.value + '\n[color=#333333][b]Commentaire(s) supplémentaire(s) :[/b][/color] ' + form.desc.value;
             form.content.value = content;
             break;
           case 2 :
@@ -887,7 +887,7 @@ li.fa_separator {
             <div class="group">
               <label for="password">Mot de passe</label>
               <input id="password" class="inputbox" name="password" type="password" placeholder="Mot de passe" />
-              <p class="help-text" style="margin-top:-15px;margin-bottom:15px;"><a href="/profile?mode=sendpassword">I forgot my password</a> &bull; <a href="/register">I am not registered</a></p>
+              <p class="help-text" style="margin-top:-15px;margin-bottom:15px;"><a href="/profile?mode=sendpassword">J'ai oublié mon mot de passe</a> &bull; <a href="/register">Je ne suis pas enregistré</a></p>
             </div>
             <label><input type="checkbox" name="autologin"/> Connexion automatique</label>
             <div class="center"><input class="button" type="submit" value="Connexion" name="login"/></div>
@@ -988,9 +988,9 @@ li.fa_separator {
               </div>
 
               <div class="group">
-                <label for="text_editor_textarea">Describe your request in detail <span class="mandatory">*</span> (<span id="charMsg">0</span>)</label>
+                <label for="text_editor_textarea">Décrivez votre demande en détails <span class="mandatory">*</span> (<span id="charMsg">0</span>)</label>
                 <textarea id="text_editor_textarea" name="desc" placeholder="Give a detailed description of what you're requesting"></textarea>
-                <div class="fa_help">?<p class="help-text">This is where you can describe to designers what you're expecting. Make sure to provide as much details as possible. The length of your description should be at least 150 characters.</p></div>
+                <div class="fa_help">?<p class="help-text">Merci de préciser votre demande en détails afin de fournir les informations nécessaires à la réalisation de votre commande. La description doit contenir au moins 150 caractères.</p></div>
               </div>
               
               <div class="group">
@@ -1016,9 +1016,9 @@ li.fa_separator {
             <fieldset>
               <h2><i class="fa fa-comment"></i> Prévisualisez votre demande</h2>
 	 	<div class="group">
-                <label for="creSubject">Subject of your request <span class="mandatory">*</span> (<span id="charTitle">0</span>)</label>
+                <label for="creSubject">Sujet de votre demande <span class="mandatory">*</span> (<span id="charTitle">0</span>)</label>
                 <input class="inputbox" id="creSubject" name="subject" type="text" placeholder="Short description of your request" />
-                <div class="fa_help">?<p class="help-text">This will be the title of your request once posted. Make sure it's explicit to what you're requesting. For example ; "A banner for my forum." The length of the title should be at least 5 characters.</p></div>
+                <div class="fa_help">?<p class="help-text">Il s'agit du titre du sujet qui sera posté. Merci de fournir un titre explicite title avec un minimum de 5 caractères.</p></div>
               </div>
 
               <div class="group">
@@ -1027,14 +1027,10 @@ li.fa_separator {
                 <div class="fa_help">?<p class="help-text">C'est le contenu du message qui sera envoyé.</p></div>
               </div>
               
-              <div class="group">
-                <label><input type="checkbox" name="creRules"/> I have read and understand the rules for requesting graphics</label>
-                <p class="help-text"><a href="/t135232-graphic-request-rules" target="_blank">Rules for requesting graphics</a></p>
-              </div>
               
               <textarea style="display:none" name="message"></textarea>
               <input type="hidden" name="mode" value="newtopic" />
-              <input type="hidden" name="f" value="31" /> 
+              <input type="hidden" name="f" value="1" /> 
             </fieldset>
             <div style="clear:both;"></div>
           </div>
@@ -1045,13 +1041,15 @@ li.fa_separator {
         <div id="stepData-3" class="hidden">
           <div class="infobox offset">
             <img src="http://i38.servimg.com/u/f38/18/21/41/30/good-f10.png" alt="?"/>
-            <h1 style="color:#8C5">Submission</h1>
-            <p>Before you <strong>submit</strong> your request, take a few moments to go over what you've filled in to make sure you're <strong>satisfied</strong> with the result. This will give you a chance to <strong>preview</strong> how your request will appear <strong>once submitted</strong>, and give you a chance to go back and change anything.<br/><br/><b>You can still edit your request after submission, but it's imperative that you review what has been written !</b></p>
+            <h1 style="color:#8C5">Enregistrez</h1>
+            <p>Avant d'<strong>enregistrer</strong> votre demande, vérifiez que vous avez correctement remplis les champs.
+              
+            <br/><br/><b>Vous pourrez toujours éditer votre demande une fois que celle-ci aura été postée.</b></p>
           </div>
         
           <div class="dataform offset">
             <fieldset>
-              <h2><i class="fa fa-check"></i> Submit</h2>
+              <h2><i class="fa fa-check"></i> Confirmer</h2>
               <div id="crePreview" class="group"></div>
             </fieldset>
           </div>
@@ -1059,7 +1057,7 @@ li.fa_separator {
         </div>
         
         <div class="offset center">
-          <input class="button back hidden" type="button" value="back" onclick="_form.back(this)"/><input class="button next" type="button" value="Suivant" onclick="_form.next(this)"/><input class="button finish hidden" type="submit" name="post" value="Terminer"/>
+          <input class="button back hidden" type="button" value="Précédent" onclick="_form.back(this)"/><input class="button next" type="button" value="Suivant" onclick="_form.next(this)"/><input class="button finish hidden" type="submit" name="post" value="Terminer"/>
         </div>
         
       </form>
