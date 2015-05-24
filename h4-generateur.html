@@ -4,10 +4,10 @@
     Graphic request form developed by Ange Tuteur ( http://help.forumotion.com/u88576 ) for the English Support Forum of Forumactif
     Usage : This form, in its entirety, is ONLY allowed to be used on Official Support Forums for the Forumactif service.
     Learning : Snippets of code found in this form may be used for learning purposes, but should not be redistributed without the author's consent.
-    
+
     Quick validation : http://validator.w3.org/check?uri=http%3A%2F%2Fhelp.forumotion.com%2Fh9-submit-a-graphic-request
   -->
-  
+
   <head>
     <title>Générateur de commande</title>
     <meta charset="utf-8"/>
@@ -26,20 +26,20 @@
       }
       body.fa_guest .dataLogin { display:block !important }
       body.fa_guest .dataGraphic { display:none !important }
-      
+
       h1, h2, h3, h4, h5, h6, .h3 {
         font-family:"Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-weight:800;
       }
-      h1, h2, h3 { margin:20px 0 }  
-      
+      h1, h2, h3 { margin:20px 0 }
+
       fieldset { border:none }
-      
+
       a:link, a:visited { color:#369FCF }
       a:hover { color:#247195 }
       a:focus { color:#E7B11F }
       a:link, a:hover, a:focus { text-decoration:none }
-      
+
       .forumactif { color:#333 }
       .forumactif span { color:#39C }
       .center { text-align:center }
@@ -53,11 +53,11 @@
     position: relative;
     width: auto;
 }
-      
+
       #logo-center{
       text-align: center;
       }
-      
+
 
       /* progress bar */
       #progress {
@@ -94,7 +94,7 @@
         width:40px;
         margin-right:15px;
       }
-      
+
       .ellipsis span { color: #2e3133!important;}
       .ellipsis i { line-height:40px }
 
@@ -102,7 +102,7 @@
         display:inline-block;
         margin-right:10px;
       }
-      
+
 
       /* body content */
       #content {
@@ -110,7 +110,7 @@
         margin:95px auto 0 auto;
         position:relative;
       }
-      
+
 
       /* content offset */
       .offset {
@@ -118,7 +118,7 @@
         margin:25px auto;
         width:60%;
       }
-    
+
 
       /* info texts */
       .infobox { text-align:center }
@@ -127,7 +127,7 @@
         font-size:22px;
         text-transform:uppercase;
       }
-    
+
 
       /* form elements */
       .dataform {
@@ -135,12 +135,12 @@
         background:#39C;
         border-radius:3px;
       }
-      
+
       .dataform .help-text {
         font-style:italic;
         margin:5px 0;
       }
-      
+
       .dataform a {
         color:#FFF;
         text-decoration:underline;
@@ -178,7 +178,7 @@
         width:85%;
       }
       .inputbox:-ms-input-placeholder, textarea:-ms-input-placeholder { color:#999 }
-      
+
       .dataform textarea { height:250px }
       .dataform .box .inputbox { width:70% }
       .dataform select { width:90% }
@@ -187,8 +187,8 @@
       .dataform .box { width:50%; position:relative; }
       .dataform .left { float:left }
       .dataform .right { float:right }
-      
-      
+
+
       /* buttons */
       input.button {
         color:#FFF;
@@ -210,7 +210,7 @@
         cursor:pointer;
         background-color:#000;
       }
-      
+
       input.button.next {
         background:url(http://i38.servimg.com/u/f38/18/21/41/30/right10.png) no-repeat 90% 50% #EB3;
         border-color:#EB3;
@@ -228,8 +228,8 @@
         border-color:#8C5;
       }
       input.button.finish:hover { background-color:#7B4 }
-      
-      
+
+
       /* login inputs */
       #username, #password {
         background:no-repeat 6px 50% #FFF;
@@ -286,12 +286,12 @@
         width:20px;
         text-align:center;
       }
-      
+
       #footer .bloc {
         float:left;
         width:25%;
       }
-      
+
       /* help boxes */
       .fa_help {
         color:#39C;
@@ -330,7 +330,7 @@
                 transition:300ms;
         z-index:1;
       }
-      
+
       .fa_help .help-text:after {
         content:url(http://i19.servimg.com/u/f19/18/21/41/30/arr10.png);
         position:absolute;
@@ -342,7 +342,7 @@
         visibility:visible;
         opacity:1;
       }
-      
+
       /* small button / dropdown */
       .button-sm, a.button-sm {
         color:#39C;
@@ -365,7 +365,7 @@
         font-size:13px;
         line-height:19px;
       }
-      
+
       .dropdown {
         background:#EEE;
         box-shadow:0 3px 6px rgba(0,0,0, 0.175);
@@ -375,7 +375,7 @@
         z-index:999;
         padding:3px;
       }
-      
+
       .dd-row {
         padding:3px;
         margin:3px 0;
@@ -386,13 +386,13 @@
         border-radius:3px;
         padding:4px 3px;
       }
-      
+
       .dropdown .button {
         font-size:10px;
         padding:3px;
         margin:3px;
       }
-      
+
       /* image manager */
       #im_fields {
         border:1px solid #DDD;
@@ -401,7 +401,7 @@
         width:250px;
         overflow-y:auto;
       }
-      
+
       /* preview */
       #crePreview {
         color:#666;
@@ -416,17 +416,17 @@
         border-bottom:
         2px solid;
       }
-      
+
       /* colorpicker */
       #colorPicker { position:absolute }
-      
+
       .sp-container {
         background:#EEE;
         border:1px solid #CCC;
         border-radius:3px;
         box-shadow:0 6px 12px rgba(0,0,0,0.175);
       }
-    
+
       a.sp-cancel, .sp-container button {
         color:#FFF !important;
         font-size:12px;
@@ -457,9 +457,9 @@
       }
       .sp-initial div > span { width:100% }
       .sp-initial div > span span { width:auto }
-      
+
        /* ajout FDF francais */
-       
+
        #fa_toolbar {
     border-bottom: 1px solid #ddd!important;
     height: 35px!important;
@@ -499,7 +499,7 @@
     display: inline-block !important;
     vertical-align: middle;
 }
-      
+
 #fa_right {
     float: right;
     font-size: 14px;
@@ -509,7 +509,7 @@
 }
 
 #fa_right a {
- color: #FFFFFF!important; 
+ color: #FFFFFF!important;
 }
 
 #fa_menu #fa_menulist {
@@ -580,8 +580,8 @@ li.fa_separator {
     display: none;
 }
 
-       
-       
+
+
       /* box sizer */
       #boxSizing {
         background:#000;
@@ -613,7 +613,7 @@ li.fa_separator {
         right:0;
         z-index:1;
       }
-      
+
       .optionbar .inputbox {
         margin:0;
         width:auto;
@@ -621,13 +621,13 @@ li.fa_separator {
         font-size:15px;
         margin:0 3px;
       }
-    
+
       .optionbar .button {
         font-size:12px;
         padding:3px 6px;
         margin:0 3px;
       }
-      
+
       .noscript {
         text-align:center;
         background:#FFF;
@@ -638,7 +638,7 @@ li.fa_separator {
         bottom:0;
         z-index:999;
       }
-    
+
       /* hide elements */
       .hidden {
         display:none !important;
@@ -649,13 +649,13 @@ li.fa_separator {
       @media (max-width:990px) {
         #header { padding:40px 30px }
         #progress { padding:20px 30px }
-        
+
         .brand {
           font-size:28px;
           background:none;
           padding-left:0;
         }
-        
+
         .dataform select, .inputbox, .dataform textarea { width:80% }
         .dataform .box .inputbox { width:60% }
         .dataform select { width:85% }
@@ -692,13 +692,13 @@ li.fa_separator {
     <script type="text/javascript">// <![CDATA[
     function getId(id) { return document.getElementById(id) };
     function removeClass(el, reg) { el.className = el.className.replace(reg, '') };
-    
+
     // check if the user is logged in
     $.get('/profile?mode=editprofile', function(d) {
       var url = $('#profile_field_3_-10', d), name = $('.inputbox[name="username"]', d), form = document.post;
-      
+
       if (!url.length) document.body.className += ' fa_guest'; // user is guest if URL field isn't found
-      
+
       // otherwise, we fill in some form data
       else {
         $(function() {
@@ -707,14 +707,14 @@ li.fa_separator {
         });
       }
     });
-    
+
     var _form = {
       step : 1,
-      
+
       next : function(b) {
         if (!b) return;
         var form = document.post, error = '', template = '';
-        
+
         switch (_form.step) {
           case 1 :
             for (var data = getId('stepData-1').getElementsByTagName('INPUT'), i = 0, j = data.length, pass = true; i<j; i++) {
@@ -722,7 +722,7 @@ li.fa_separator {
                 getId('stepData-1').getElementsByTagName('SELECT')[0].style.borderColor = '#E53';
                 pass = false;
               }
-              
+
               if (!data[i].value) {
                 if (data[i].name == 'creType' || data[i].name == 'creURL' || data[i].name == 'creSize' || data[i].name == 'creRules' || data[i].name == 'creText') {
                   data[i].style.borderColor = '#E53';
@@ -741,6 +741,8 @@ li.fa_separator {
               prev.innerHTML = '<div class="center"><i class="fa fa-spinner fa-spin fa-5x"></i><p>Prévisualisation en cours...</p></div>';
               template = form.content.value;
               form.message.value = template;
+              var type_to_forum = {"Banniere": 20 , "Bouton": 21, "Avatar": 19, "Signature": 19, "Header": 20, "Kit": 19, "Rang": 21, "Icones": 21, "Horloge": 23, "Theme": 22, "Autre": 23};
+              form.f.value = type_to_forum[form.creType.value];
               $.post('/privmsg', {
                 subject : form.subject.value,
                 message : template,
@@ -753,11 +755,11 @@ li.fa_separator {
             }
             break;
         }
-        
+
         window.scroll(0,125);
         getId('stepData-' + _form.step).className += ' hidden';
         getId('step-' + _form.step).className += ' checked';
-        
+
         _form.step++;
         switch (_form.step) {
           case 2 :
@@ -768,21 +770,21 @@ li.fa_separator {
             removeClass(b.nextSibling, /hidden/);
             break;
         }
-        
+
         removeClass(getId('stepData-' + _form.step), /hidden/);
         removeClass(getId('step-' + _form.step), /inactive/);
       },
-      
+
       back : function(b) {
         if (!b) return;
         window.scroll(0,125);
-        
+
         getId('stepData-' + _form.step).className += ' hidden';
         getId('step-' + _form.step).className += ' inactive';
-        
+
         _form.step--;
         switch (_form.step) {
-          case 1 : 
+          case 1 :
             b.className += ' hidden';
             break;
           case 2 :
@@ -790,11 +792,11 @@ li.fa_separator {
             b.nextSibling.nextSibling.className += ' hidden';
             break;
         }
-        
+
         removeClass(getId('stepData-' + _form.step), /hidden/);
         removeClass(getId('step-' + _form.step), /checked/);
       },
-      
+
       selectColor : function(input) {
         var picker = getId('colorPicker'), spec = getId('spectrumPicker');
         removeClass(picker, /hidden/);
@@ -814,7 +816,7 @@ li.fa_separator {
           input.value = $('.sp-input',picker)[0].value.toUpperCase();
         });
       },
-      
+
       addImage : function() {
         var row = document.createElement('DIV');
         row.className = 'dd-row';
@@ -825,7 +827,7 @@ li.fa_separator {
     }
     //]]></script>
   </head>
-  
+
   <body>
 	<div id="fa_toolbar" class="fa_fix fa_toolbar_XL_Sized">
 	<div id="fa_right" class="fa_tbMainElement">
@@ -835,22 +837,22 @@ li.fa_separator {
 			<a id="fa_icon" href="http://www.forumactif.com" target="_blank"></a>
 			<a id="fa_service" href="http://www.forumactif.com" target="_blank">Forumactif</a>
 	</span>
-			
+
 	<div id="fa_search" class="fa_tbMainElement">
 		<form method="get" action="/search">
 			<a id="fa_magnifier"></a><input type="text" id="fa_textarea" name="search_keywords">
 		</form>
 	</div>
-	
+
 	<span id="fa_share" class="fa_tbMainElement">
 		<span id="fa_share_text">Partagez : </span>
 			<a id="fa_fb"></a><a id="fa_twitter"></a><a id="fa_gp"></a><a id="fa_rss" href="http://test-tech-fdf.forumsactifs.com/rss" target="_blank"></a>
 	</span>
 </div>
-    
 
-       
-   
+
+
+
     <!-- HEADER -->
     <div id="header">
       <div id="logo-center">
@@ -858,8 +860,8 @@ li.fa_separator {
         </div>
       <div style="clear:both;"></div>
     </div>
-    
-    
+
+
     <!-- PROGRESS BAR -->
     <div id="progress">
       <div class="dataLogin step" style="display:none"><span class="ellipsis"><i class="fa fa-sign-in"></i></span>Connectez-vous ou inscrivez-vous</div>
@@ -869,11 +871,11 @@ li.fa_separator {
         <div id="step-3" class="step inactive"><span class="ellipsis"><span>3</span><i style="display:none" class="fa fa-check"></i></span><span class="step-txt">Enregistrez</span></div>
       </div>
       <div style="clear:both;"></div>
-    </div>    
-    
+    </div>
+
     <!-- CONTENT BODY -->
     <div id="content">
-    
+
       <!-- LOG IN FORM FOR GUESTS -->
       <form class="dataLogin" name="form_login" method="post" action="/login" style="display:none">
         <div class="dataform offset">
@@ -883,7 +885,7 @@ li.fa_separator {
               <label for="username">Nom d'utilisateur</label>
               <input id="username" class="inputbox" name="username" type="text" placeholder="Nom d'utilisateur" />
             </div>
-            
+
             <div class="group">
               <label for="password">Mot de passe</label>
               <input id="password" class="inputbox" name="password" type="password" placeholder="Mot de passe" />
@@ -895,10 +897,10 @@ li.fa_separator {
         </div>
         <input type="hidden" value="/h2-generateur" name="redirect"/>
       </form>
-      
+
       <!-- GRAPHIC REQUEST FORM -->
       <form class="dataGraphic" action="/post" method="post" name="post" enctype="multipart/form-data">
-      
+
         <!-- STEP 1 DATA -->
         <div id="stepData-1">
           <div class="infobox offset">
@@ -908,13 +910,13 @@ li.fa_separator {
               <strong class="forumactif"><span>Forum</span>actif</strong> met à votre disposition ce générateur de commande graphique. Ce générateur rédige votre commande et la poste directement dans la section concernée par votre demande. N'hésitez pas à l'utiliser.
             </p>
           </div>
-      
+
           <div class="dataform offset">
             <fieldset>
               <h2><i class="fa fa-edit"></i> Remplissez le formulaire</h2>
               <p class="help-text">Les champs marqués d'une * sont obligatoires.</p>
               <br/>
-          
+
               <div class="group">
                 <label>Nature de la création <span class="mandatory">*</span></label>
                 <div>
@@ -933,54 +935,54 @@ li.fa_separator {
                     <option value="Autre">Autre</option>
                   </select>
                 </div>
-              
+
                 <div class="right box">
                   <input class="inputbox hidden" name="creType" type="text" placeholder="Merci de spécifier" />
                 </div>
                 <div class="fa_help">?<p class="help-text">Choisissez la nature de la création désirée. Si la nature n'est pas reprise dans les options, choisissez "Autre" et expliquez ce que vous désirez.</p></div>
               </div>
-              
+
               <div class="group">
                 <label for="creSize">Taille de la création <span class="mandatory">*</span></label>
                 <input class="inputbox" id="creSize" name="creSize" type="text" placeholder=" (en pixels, sous la forme largeur*hauteur) "/>
                 <div class="fa_help">?<p class="help-text">Spécifiez la taille de l'image désirée. <a href="http://forum.forumactif.com/t280960-listing-des-tailles-standards-de-creations" target="_blank">Aperçu des tailles types</a></p></div>
               </div>
-            
+
               <div class="group">
 
                   <label for="primaryColors">Couleur de fond</label>
                   <input class="inputbox" id="primaryColors" name="primaryColors" type="text" placeholder="#FFFFFF" onclick="_form.selectColor(this);" />
                 <div class="fa_help">?<p class="help-text">Si vous désirez une couleur de fond spéficique, merci de la préciser.</p></div>
               </div>
-            
+
               <div class="group">
                 <div class="left box">
                   <label for="creImages">Images à insérer <span class="mandatory">*</span></label>
                   <input class="inputbox" id="creImages" name="creImages" type="text" placeholder="http://illiweb.com/fa/empty.gif" />
                   <a href="#" id="servimgUpload" class="button-sm b-fa" title="Héberger une image"><i class="fa fa-upload"></i></a>
                 </div>
-                
+
                 <div class="right box">
                   <label for="creText">Texte à insérer <span class="mandatory">*</span></label>
                   <input class="inputbox" id="creText" name="creText" type="text" placeholder="Texte à insérer sur la crétion" />
                 </div>
                 <div class="fa_help">?<p class="help-text">Merci de préciser les images désirées ainsi que le texte à insérer sur la création.</p></div>
               </div>
-              
+
               <div class="group">
                 <div class="left box">
                   <label for="creFont">Police à utiliser</label>
                   <input class="inputbox" id="creFont" name="creFont" type="text" placeholder="Police désirée" />
                   <a href="http://www.dafont.com/" class="button-sm b-fa" title="Trouver une police" target="_blank"><i class="fa fa-search"></i></a>
                 </div>
-                
+
                 <div class="right box">
                   <label for="creFontColor">Couleur de la police</label>
                   <input class="inputbox" id="creFontColor" name="creFontColor" type="text" placeholder="Couleur de la police" onclick="_form.selectColor(this);" />
                 </div>
                 <div class="fa_help">?<p class="help-text">Si vous désirez une police et une couleur spécifique, merci de les préciser.</p></div>
               </div>
-              
+
               <div class="group">
                   <label for="creURL">Lien de votre forum Forumactif <span class="mandatory">*</span></label>
                   <input class="inputbox" id="creURL" name="creURL" type="text" placeholder="L'adresse de votre forum" />
@@ -992,18 +994,18 @@ li.fa_separator {
                 <textarea id="text_editor_textarea" name="desc" placeholder="Give a detailed description of what you're requesting"></textarea>
                 <div class="fa_help">?<p class="help-text">Merci de préciser votre demande en détails afin de fournir les informations nécessaires à la réalisation de votre commande. La description doit contenir au moins 150 caractères.</p></div>
               </div>
-              
+
               <div class="group">
                 <label><input type="checkbox" name="creRules"/> J'ai lu et compris les règles de la section graphique</label>
                 <p class="help-text"><a href="http://forum.forumactif.com/t287501-regles-de-la-section-graphique-comment-faire-une-demande" target="_blank">Règles de la section graphique</a></p>
               </div>
-              
+
             </fieldset>
             <div style="clear:both;"></div>
           </div>
         </div>
-        
-        
+
+
         <!-- STEP 2 DATA -->
         <div id="stepData-2" class="hidden">
           <div class="infobox offset">
@@ -1011,11 +1013,11 @@ li.fa_separator {
             <h1 style="color:#E53">Prévisualisez votre demande</h1>
             <p>Vérifiez que tous les élements correspondent à votre demande.</p>
           </div>
-        
+
           <div class="dataform offset">
             <fieldset>
               <h2><i class="fa fa-comment"></i> Prévisualisez votre demande</h2>
-	 	<div class="group">
+		<div class="group">
                 <label for="creSubject">Sujet de votre demande <span class="mandatory">*</span> (<span id="charTitle">0</span>)</label>
                 <input class="inputbox" id="creSubject" name="subject" type="text" placeholder="Short description of your request" />
                 <div class="fa_help">?<p class="help-text">Il s'agit du titre du sujet qui sera posté. Merci de fournir un titre explicite title avec un minimum de 5 caractères.</p></div>
@@ -1026,27 +1028,27 @@ li.fa_separator {
                 <textarea id="text_editor_textarea" name="content" placeholder="Give a detailed description of what you're requesting"></textarea>
                 <div class="fa_help">?<p class="help-text">C'est le contenu du message qui sera envoyé.</p></div>
               </div>
-              
-              
+
+
               <textarea style="display:none" name="message"></textarea>
               <input type="hidden" name="mode" value="newtopic" />
-              <input type="hidden" name="f" value="1" /> 
+              <input type="hidden" name="f" value="1" />
             </fieldset>
             <div style="clear:both;"></div>
           </div>
         </div>
-        
-        
+
+
         <!-- STEP DATA 3 -->
         <div id="stepData-3" class="hidden">
           <div class="infobox offset">
             <img src="http://i38.servimg.com/u/f38/18/21/41/30/good-f10.png" alt="?"/>
             <h1 style="color:#8C5">Enregistrez</h1>
             <p>Avant d'<strong>enregistrer</strong> votre demande, vérifiez que vous avez correctement remplis les champs.
-              
+
             <br/><br/><b>Vous pourrez toujours éditer votre demande une fois que celle-ci aura été postée.</b></p>
           </div>
-        
+
           <div class="dataform offset">
             <fieldset>
               <h2><i class="fa fa-check"></i> Confirmer</h2>
@@ -1055,21 +1057,21 @@ li.fa_separator {
           </div>
           <div style="clear:both;"></div>
         </div>
-        
+
         <div class="offset center">
           <input class="button back hidden" type="button" value="Précédent" onclick="_form.back(this)"/><input class="button next" type="button" value="Suivant" onclick="_form.next(this)"/><input class="button finish hidden" type="submit" name="post" value="Terminer"/>
         </div>
-        
+
       </form>
-    
-      <noscript><div class="noscript">JavaScript is required to move forward in this form. Seeing as it's disabled or unsupported by your browser, you should <a href="/t135232-graphic-request-rules">click here</a> to find out how to submit a request for graphics.</div></noscript>    
+
+      <noscript><div class="noscript">JavaScript is required to move forward in this form. Seeing as it's disabled or unsupported by your browser, you should <a href="/t135232-graphic-request-rules">click here</a> to find out how to submit a request for graphics.</div></noscript>
     </div>
-    
-    
+
+
     <!-- FOOTER -->
     <div id="footer">
       <div class="content">
-      
+
 	    <!-- DROPDOWNS AND OVERLAYS -->
 	    <div id="imageManager" class="dropdown hidden">
 	      <div id="im_fields">
@@ -1079,7 +1081,7 @@ li.fa_separator {
 	      </div>
 	      <div style="text-align:right;"><input type="button" class="button back" style="background-image:none" value="Effacer" onclick="getId('imageManager').className += ' hidden';"/><input id="imagesUpdate" type="button" class="button finish" style="background-image:none"  value="Confirmer"/></div>
 	    </div>
-	    
+
 	    <div id="colorPicker" class="hidden"><input type="text" id="spectrumPicker"/></div>
 	    <div id="boxSizing" class="hidden">
 	      <div class="optionbar">
@@ -1088,34 +1090,34 @@ li.fa_separator {
 		<input id="boxReset" class="button next" style="background-image:none" type="button" value="Effacer"/>
 		<input class="button back" style="background-image:none" type="button" value="Annuler" onclick="getId('boxSizing').className += ' hidden';"/>
 	      </div>
-	      <div id="box"></div> 
-      
+	      <div id="box"></div>
+
       </div>
     </div>
-    
+
     <!-- JAVASCRIPT TO EXECUTE WHEN THE DOCUMENT IS READY -->
     <script type="text/javascript">// <![CDATA[
     (function() {
       var form = document.post, creType = form.creType, servimg, picker = getId('colorPicker'), box = getId('box'), boxOverlay = getId('boxSizing'), boxVal = getId('boxDimensions'), im_dd = getId('imageManager');
-      
+
       // hide dropdowns on mousedown
       getId('content').onmousedown = function() {
         for (var hide = [ picker, im_dd, servimg ], i = 0, j = hide.length; i<j; i++) (hide[i] && !/hidden/.test(hide[i].className)) && (hide[i].className += ' hidden');
-      }    
-      
+      }
+
       // mandatory fields are bound with an onkeyup and onblur event handler
       // if they're not filled in, they'll be outlined in red
       bind(function(a) { a.value.length ? a.style.borderColor = '' : a.style.borderColor = '#E53' }, creType, creSize, creImages, creText, form.creURL);
       bind(function(a) { charLimit(a, getId('charTitle'), 4) }, form.subject);
       bind(function(a) { charLimit(a, getId('charMsg'), 149) }, form.desc);
-      
+
       form.creURL.onblur = function() {
         if (this.value.length) {
           this.style.borderColor = '';
           !/http:\/\/|https:\/\//.test(this.value) && (this.value = 'http://' + this.value);
         } else this.style.borderColor = '#E53';
       };
-      
+
       // servimg upload frame
       getId('servimgUpload').onclick = function() {
         if (!servimg) {
@@ -1123,17 +1125,17 @@ li.fa_separator {
           servimg.className = 'dropdown hidden';
           servimg.innerHTML = '<div class="center"><i class="fa fa-spinner fa-spin fa-3x"></i><p>Chargement en cours...</p><div>';
           document.body.appendChild(servimg);
-          $.get('/post?f=31&mode=newtopic', function(d){
+          $.get('/post?f=5&mode=newtopic', function(d){
             servimg.innerHTML = '<iframe src="http://' + d.match(/servimgDomain = '(.*?)'/)[1] + '/forum_upload.php?account=' + d.match(/servImgAccount = '(.*?)'/)[1] + '&id=' + d.match(/servImgId = '(.*?)'/)[1] + '&f=' + d.match(/servImgF = '(.*?)'/)[1] + '" style="width:450px;height:230px;border:none;" scrolling="no"></iframe>';
           });
         }
-        
+
         /hidden/.test(servimg.className) && removeClass(servimg, /hidden/);
         servimg.style.left = $(this).offset().left + 'px';
         servimg.style.top = $(this).offset().top + 25 + 'px';
         return false;
       };
-      
+
       // image manager dropdown
       form.creImages.onclick = function() {
         this.blur();
@@ -1141,21 +1143,21 @@ li.fa_separator {
         im_dd.style.left = $(this).offset().left + 'px';
         im_dd.style.top = $(this).offset().top + 55 + 'px';
       };
-      
+
       // update the image field value with that of the image manager's fields
       getId('imagesUpdate').onclick = function() {
         for (var img = getId('im_fields').getElementsByTagName('INPUT'), i = 0, j = img.length, val = ''; i<j; i++) val += img[i].value.replace(/^\s+|\s+$/g,'') + ' ';
         form.creImages.value = val;
         im_dd.className += ' hidden';
       };
-      
+
       // creation type selection
       form.creTypeSelect.onchange = function() {
         var v = this.value;
         !/hidden/.test(creType.className) && (creType.className += ' hidden');
         this.parentNode.className = '';
         this.style.borderColor = '';
-        
+
         if (!/0|Other/.test(v)) creType.value = v;
         else if (v == 'Other') {
           this.parentNode.className = 'left box';
@@ -1166,21 +1168,21 @@ li.fa_separator {
           this.style.borderColor = '#E53'
         }
       };
-      
+
       // box sizer
       $(box).resizable().resize(function() { boxVal.value = this.style.width.replace(/px/,'') + 'x' + this.style.height.replace(/px/,'') });
       getId('boxSave').onclick = function () {
         form.creSize.value = boxVal.value;
         boxOverlay.className += ' hidden';
       };
-      
+
       // reset button to reset the box to 100x100
       getId('boxReset').onclick = function() {
         box.style.width = '100px';
         box.style.height = '100px';
         boxVal.value = '100x100';
       };
-      
+
       // if the input is correct we'll resize the box on keyup
       boxVal.onkeyup = function() {
         if (/\d+x\d+/.test(this.value)) {
@@ -1189,7 +1191,7 @@ li.fa_separator {
           box.style.height = v[2] + 'px';
         }
       };
-      
+
       // opens our sizer and sets some values
       form.creSize.onfocus = function() {
         this.blur();
@@ -1201,7 +1203,7 @@ li.fa_separator {
           box.style.height = v[2] + 'px';
         } else getId('boxReset').click();
       };
-      
+
       // character counter for elements that require one
       // a is the input or textarea
       // b is your character counting element
@@ -1216,7 +1218,7 @@ li.fa_separator {
           a.style.borderColor = '#E53';
         }
       };
-      
+
       // helper for binding keyup and blur to our inputs
       // the first arg is the function to be executed on keyup and blur
       // every other argument afterwards is the element you're applying this function to
@@ -1229,5 +1231,5 @@ li.fa_separator {
     })();
     //]]></script>
   </body>
-  
+
 </html>
