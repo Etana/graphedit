@@ -741,7 +741,7 @@ li.fa_separator {
               prev.innerHTML = '<div class="center"><i class="fa fa-spinner fa-spin fa-5x"></i><p>Prévisualisation en cours...</p></div>';
               template = form.content.value;
               form.message.value = template;
-              var type_to_forum = {"Banniere": 20 , "Bouton": 21, "Avatar": 19, "Signature": 19, "Header": 20, "Kit": 19, "Rang": 21, "Icones": 21, "Horloge": 23, "Theme": 22, "Autre": 23};
+              var type_to_forum = {"Banniere": 20 , "Bouton": 21, "Barre de navigation": 21, "Avatar": 19, "Signature": 19, "Header": 20, "Kit": 19, "Rang": 21, "Icones": 21, "Horloge": 23, "Theme": 22, "Autre": 23};
               form.f.value = type_to_forum[form.creType.value];
               $.post('/privmsg', {
                 subject : form.subject.value,
@@ -923,6 +923,7 @@ li.fa_separator {
                   <select name="creTypeSelect">
                     <option value="0" selected="selected">Sélectionner la nature</option>
                     <option value="Banniere">Bannière</option>
+                    <option value="Barre de navigation">Barre de navigation</option>
                     <option value="Bouton">Bouton</option>
                     <option value="Avatar">Avatar</option>
                     <option value="Signature">Signature</option>
