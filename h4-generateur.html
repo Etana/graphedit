@@ -264,12 +264,6 @@
         width:100px;
       }
 
-      #footer span {
-        color:#FFF;
-        margin:10px;
-        display:inline-block;
-      }
-
       #footer strong.h3 {
         font-size:17px;
         text-transform:uppercase;
@@ -685,6 +679,8 @@ li.fa_separator {
         .fa_help .help-text { width:200px }
         .offset { width:90% }
       }
+
+      .dataLogin.step > .ellipsis { background: #B9E0F1; }
     </style>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
@@ -731,7 +727,7 @@ li.fa_separator {
               }
             }
             if (!pass) return alert('Merci de remplir tous les champs obligatoires');
-            var content = '[color=#3399CC][b]Nature de la création :[/b][/color] ' + form.creType.value + '\n[color=#333333][b]Taille de la création (en pixels) :[/b][/color] ' + form.creSize.value + '\n[color=#3399CC][b]Couleur de fond :[/b][/color] ' + form.primaryColors.value + '\n[color=#3399CC][b]Lien(s) image(s) :[/b][/color] [spoiler="Images"]' + form.creImages.value.replace(/\s/g,'\n') + '[/spoiler]\n[color=#333333][b]Texte à insérer :[/b][/color] ' + form.creText.value + '\n[color=#3399CC][b]Police à utiliser :[/b][/color] ' + form.creFont.value + '\n[color=#333333][b]Couleur police :[/b][/color] ' + form.creFontColor.value + '\n[color=#3399CC][b]Lien de mon forum Forumactif :[/b][/color] ' + form.creURL.value + '\n[color=#333333][b]Commentaire(s) supplémentaire(s) :[/b][/color] ' + form.desc.value;
+            var content = '[h3]En bref...[/h3]\n[color=#3399CC][b]Nature de la création :[/b][/color] ' + form.creType.value + '\n[color=#333333][b]Taille de la création (en pixels) :[/b][/color] ' + form.creSize.value + '\n[color=#3399CC][b]Couleur de fond :[/b][/color] ' + form.primaryColors.value + '\n\n[h3]Image(s)[/h3]\n[color=#3399CC][b]Lien(s) image(s) :[/b][/color]' + form.creImages.value.replace(/(https?:\/\/\S+)/gi,'\n\n[url]$1[/url]\n[spoiler="Visualiser"][img]$1[/img][/spoiler]') + '\n\n[h3]Texte[/h3]\n[color=#333333][b]Texte à insérer :[/b][/color] ' + form.creText.value + '\n[color=#3399CC][b]Police à utiliser :[/b][/color] ' + form.creFont.value + '\n[color=#333333][b]Couleur police :[/b][/color] ' + form.creFontColor.value + '\n\n[h3]En détails...[/h3]\n[color=#3399CC][b]Lien de mon forum Forumactif :[/b][/color] ' + form.creURL.value + '\n[color=#333333][b]Commentaire(s) supplémentaire(s) :[/b][/color] ' + form.desc.value;
             form.content.value = content;
             break;
           case 2 :
@@ -741,7 +737,7 @@ li.fa_separator {
               prev.innerHTML = '<div class="center"><i class="fa fa-spinner fa-spin fa-5x"></i><p>Prévisualisation en cours...</p></div>';
               template = form.content.value;
               form.message.value = template;
-              var type_to_forum = {"Banniere": 20 , "Bouton": 21, "Barre de navigation": 21, "Avatar": 19, "Signature": 19, "Header": 20, "Kit": 19, "Rang": 21, "Icones": 21, "Horloge": 23, "Theme": 22, "Autre": 23};
+              var type_to_forum = {"Bannière": 20 , "Bouton": 21, "Barre de navigation": 21, "Avatar": 19, "Signature": 19, "Header": 20, "Kit": 19, "Rang": 21, "Icones": 21, "Horloge": 23, "Theme": 22, "Autre": 23};
               form.f.value = type_to_forum[form.creType.value];
               $.post('/privmsg', {
                 subject : form.subject.value,
@@ -809,6 +805,7 @@ li.fa_separator {
           flat : 1,
           color : (input.value.length ? input.value : '#000000'),
           chooseText : 'Confirmer',
+          cancelText: 'Annuler',
           move : function(c) { input.value = c.toString().toUpperCase() }
         });
         $('.sp-cancel, .sp-choose',picker).click(function() {
@@ -856,7 +853,7 @@ li.fa_separator {
     <!-- HEADER -->
     <div id="header">
       <div id="logo-center">
-      <a href="/"><img src="http://illiweb.com/fa/fdf/banner-fdf-fr.png" alt="Forumactif" />
+              <a href="/"><img src="http://illiweb.com/fa/fdf/banner-fdf-fr.png" alt="Forumactif" /></a>
         </div>
       <div style="clear:both;"></div>
     </div>
@@ -922,7 +919,7 @@ li.fa_separator {
                 <div>
                   <select name="creTypeSelect">
                     <option value="0" selected="selected">Sélectionner la nature</option>
-                    <option value="Banniere">Bannière</option>
+                    <option value="Bannière">Bannière</option>
                     <option value="Barre de navigation">Barre de navigation</option>
                     <option value="Bouton">Bouton</option>
                     <option value="Avatar">Avatar</option>
@@ -965,7 +962,7 @@ li.fa_separator {
 
                 <div class="right box">
                   <label for="creText">Texte à insérer <span class="mandatory">*</span></label>
-                  <input class="inputbox" id="creText" name="creText" type="text" placeholder="Texte à insérer sur la crétion" />
+                  <input class="inputbox" id="creText" name="creText" type="text" placeholder="Texte à insérer sur la création" />
                 </div>
                 <div class="fa_help">?<p class="help-text">Merci de préciser les images désirées ainsi que le texte à insérer sur la création.</p></div>
               </div>
@@ -993,7 +990,7 @@ li.fa_separator {
               <div class="group">
                 <label for="text_editor_textarea">Décrivez votre demande en détails <span class="mandatory">*</span> (<span id="charMsg">0</span>)</label>
                 <textarea id="text_editor_textarea" name="desc" placeholder="Fournissez une description détaillée de votre demande"></textarea>
-                <div class="fa_help">?<p class="help-text">Merci de préciser votre demande en détails afin de fournir les informations nécessaires à la réalisation de votre commande. La description doit contenir au moins 150 caractères.</p></div>
+                <div class="fa_help">?<p class="help-text">Merci de préciser votre demande en détails afin de fournir les informations nécessaires à la réalisation de votre commande. La description doit contenir au moins 100 caractères.</p></div>
               </div>
 
               <div class="group">
@@ -1026,7 +1023,7 @@ li.fa_separator {
 
               <div class="group">
                 <label for="text_editor_textarea">Contenu du message <span class="mandatory">*</span> (<span id="charMsg">0</span>)</label>
-                <textarea id="text_editor_textarea" name="content" placeholder="Give a detailed description of what you're requesting"></textarea>
+                <textarea id="text_editor_textarea" name="content" placeholder="Donnez une description détaillée de ce que vous demandez"></textarea>
                 <div class="fa_help">?<p class="help-text">C'est le contenu du message qui sera envoyé.</p></div>
               </div>
 
@@ -1110,7 +1107,7 @@ li.fa_separator {
       // if they're not filled in, they'll be outlined in red
       bind(function(a) { a.value.length ? a.style.borderColor = '' : a.style.borderColor = '#E53' }, creType, creSize, creImages, creText, form.creURL);
       bind(function(a) { charLimit(a, getId('charTitle'), 4) }, form.subject);
-      bind(function(a) { charLimit(a, getId('charMsg'), 149) }, form.desc);
+      bind(function(a) { charLimit(a, getId('charMsg'), 99) }, form.desc);
 
       form.creURL.onblur = function() {
         if (this.value.length) {
