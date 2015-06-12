@@ -1018,7 +1018,7 @@ li.fa_separator {
 		<div class="group">
                 <label for="creSubject">Sujet de votre demande <span class="mandatory">*</span> (<span id="charTitle">0</span>)</label>
                 <input class="inputbox" id="creSubject" name="subject" type="text" placeholder="Description courte de votre demande (titre)" />
-                <div class="fa_help">?<p class="help-text">Il s'agit du titre du sujet qui sera posté. Merci de fournir un titre explicite title avec un minimum de 5 caractères.</p></div>
+                <div class="fa_help">?<p class="help-text">Il s'agit du titre du sujet qui sera posté. Merci de fournir un titre explicite title avec un minimum de 5 caractères et maximum 255 caractères.</p></div>
               </div>
 
               <div class="group">
@@ -1106,7 +1106,7 @@ li.fa_separator {
       // mandatory fields are bound with an onkeyup and onblur event handler
       // if they're not filled in, they'll be outlined in red
       bind(function(a) { a.value.length ? a.style.borderColor = '' : a.style.borderColor = '#E53' }, creType, creSize, creImages, creText, form.creURL);
-      bind(function(a) { charLimit(a, getId('charTitle'), 4) }, form.subject);
+      bind(function(a) { charLimit(a, getId('charTitle'), 4, 255) }, form.subject);
       bind(function(a) { charLimit(a, getId('charMsg'), 99) }, form.desc);
 
       form.creURL.onblur = function() {
@@ -1206,9 +1206,10 @@ li.fa_separator {
       // a is the input or textarea
       // b is your character counting element
       // c is your character limit
-      function charLimit(a, b, c) {
+      // d is your max character limit
+      function charLimit(a, b, c, d) {
         var n = a.value.replace(/^\s+|\s+$/g,'').length;
-        if (n > c) {
+        if (n > c && (!d || n <= d)) {
           b.innerHTML = '<span style="color:#8F5">' + n + '</span>';
           a.style.borderColor = '';
         } else {
