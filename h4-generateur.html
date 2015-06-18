@@ -739,11 +739,12 @@ li.fa_separator {
               form.message.value = template;
               var type_to_forum = {"Bannière": 20 , "Bouton": 21, "Barre de navigation": 21, "Avatar": 19, "Signature": 19, "Header": 20, "Kit": 19, "Rang": 21, "Icones": 21, "Horloge": 23, "Theme": 22, "Autre": 23};
               form.f.value = type_to_forum[form.creType.value];
-              $.post('/privmsg', {
+              var _param = function(obj, modifier) { var buildParams = function(prefix, obj, traditional, add) { var name; if (jQuery.isArray(obj)) { jQuery.each(obj, function(i, v) { if (traditional || /\[\]$/.test(prefix)) { add(prefix, v); } else { buildParams(prefix + "[" + (typeof v === "object" ? i : "") + "]", v, traditional, add); } }); } else { if (!traditional && jQuery.type(obj) === "object") { for (name in obj) { buildParams(prefix + "[" + name + "]", obj[name], traditional, add); } } else { add(prefix, obj); } } }; var prefix, s = [], add = function(key, value) { var nvalue; if (modifier) { if ((nvalue = modifier(key, value)) === null) { return; } else if (nvalue !== undefined) value = nvalue } value = jQuery.isFunction(value) ? value() : value == null ? "" : value; s[s.length] = _encodeURIComponent(key) + "=" + _encodeURIComponent(value); }; if (jQuery.isArray(obj) || obj.jquery && !jQuery.isPlainObject(obj)) { jQuery.each(obj, function() { add(this.name, this.value); }); } else { for (prefix in obj) { buildParams(prefix, obj[prefix], undefined, add); } } return s.join("&").replace(/%20/g, "+"); }, _encodeURIComponent = function(str) { if ((document.charset ? document.charset : document.characterSet).toLowerCase() != "utf-8") { return encodeURIComponent(escape(str).replace(/%u[A-F0-9]{4}/g, function(x) { return "&#" + parseInt(x.substr(2), 16) + ";"; })).replace(/%25/g, "%"); } else { return encodeURIComponent(str); } };
+              $.post('/privmsg', _param({
                 subject : form.subject.value,
                 message : template,
                 preview : 1
-              },function(d){
+              }),function(d){
                 prev.innerHTML = $('.post',d)[0].innerHTML.replace(/<p class="author">.*?<\/p>/,'');
               }).fail(function() {
                 prev.innerHTML = '<div class="center" style="color:#E53;">An error occurred; could not retrieve preview. Showing semi-parsed data instead. ( Preview may differ from posted result )</div><h3>' + form.subject.value + '</h3>' + template.replace(/\n/g,'<br/>').replace(/\[color=(.*?)\]\[b\]/g,'<span style="color:$1;font-weight:bold;">').replace(/\[\/b\]\[\/color\]/g,'</span>');
